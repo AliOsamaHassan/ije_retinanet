@@ -63,7 +63,7 @@ for (dType, imagePaths, outputCSV) in dataset:
     print("[INFO] {} total images in '{}'".format(len(imagePaths), dType))
 
     # open the output CSV file
-    with open(outputCSV, "w") as o:
+    with open(outputCSV, "w", newline='') as o:
         writer = csv.writer(o)
 
         # loop over image paths
@@ -118,7 +118,7 @@ for (dType, imagePaths, outputCSV) in dataset:
     # write the annotations to file
     print("[INFO] writing {} annotations ...".format(dType))
     print("[INFO] total {} annotations".format(len(annotations)))
-    with open(outputCSV, 'w') as f:
+    with open(outputCSV, 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerows(annotations)
     print("[INFO] {}.csv completed".format(dType))
